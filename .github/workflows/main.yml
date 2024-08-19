@@ -1,4 +1,4 @@
-name: vprofile actions
+name: vprofileactions
 on: workflow_dispatch
 env: 
   AWS_REGION: us-east-1
@@ -7,9 +7,9 @@ env:
 
 jobs:
   Testing:
-     runs-on: ubuntu-latest
-     steps:
-       - name: Code checkout
+   runs-on: ubuntu-latest
+   steps:
+      - name: Code checkout
          uses: actions/checkout@v4
 
       - name: Maven test
@@ -17,7 +17,6 @@ jobs:
 
       - name: Checkstyle
         run: mvn checkstyle:checkstyle
-
       
       # Setup java 11 to be default (sonar-scanner requirement as of 5.x)
       - name: Set Java 11
